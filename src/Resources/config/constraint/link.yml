@@ -1,0 +1,9 @@
+services:
+  evrinoma.link.constraint.property.name:
+    class: Evrinoma\LinkBundle\Constraint\Property\Name
+
+  evrinoma.link.constraint.property.url:
+    class: Evrinoma\LinkBundle\Constraint\Property\Url
+
+  evrinoma.link.constraint.property.active:
+    class: Evrinoma\LinkBundle\Constraint\Property\Active

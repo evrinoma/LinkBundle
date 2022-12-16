@@ -1,0 +1,91 @@
+services:
+  Evrinoma\LinkBundle\Controller\LinkApiController:
+    alias: evrinoma.link.api.controller
+    public: true
+
+  evrinoma.link.api.controller:
+    class: Evrinoma\LinkBundle\Controller\LinkApiController
+    arguments:
+      - '@jms_serializer'
+      - '@request_stack'
+      - '@evrinoma.dto.factory'
+      - '@evrinoma.link.facade'
+    autowire: true
+
+  evrinoma.link.facade:
+    class: Evrinoma\LinkBundle\Facade\Link\Facade
+    arguments:
+      - '@evrinoma.link.command.manager'
+      - '@evrinoma.link.query.manager'
+      - '@evrinoma.link.adaptor'
+    autowire: true
+
+  Evrinoma\LinkBundle\Facade\Link\FacadeInterface:
+    alias: evrinoma.link.facade
+
+  evrinoma.link.factory:
+    class: Evrinoma\LinkBundle\Factory\LinkFactory
+    public: true
+    arguments:
+
+  evrinoma.link.orm.repository:
+    class: Evrinoma\LinkBundle\Repository\Orm\Link\LinkRepository
+    public: true
+    arguments:
+
+  evrinoma.link.command.manager:
+    class: Evrinoma\LinkBundle\Manager\CommandManager
+    arguments:
+      - '@evrinoma.link.validator'
+      - '@evrinoma.link.repository'
+      - '@evrinoma.link.factory'
+      - '@evrinoma.link.command.mediator'
+
+  Evrinoma\LinkBundle\Manager\CommandManagerInterface:
+    alias: evrinoma.link.command.manager
+
+  evrinoma.link.query.manager:
+    class: Evrinoma\LinkBundle\Manager\QueryManager
+    arguments:
+      - '@evrinoma.link.repository'
+
+  Evrinoma\LinkBundle\Manager\QueryManagerInterface:
+    alias: evrinoma.link.query.manager
+    
+  evrinoma.link.validator:
+    class: Evrinoma\LinkBundle\Validator\LinkValidator
+    public: true
+    arguments:
+
+  Evrinoma\LinkBundle\Validator\LinkValidator:
+    alias: evrinoma.link.validator
+
+  evrinoma.link.query.orm.mediator:
+    class: Evrinoma\LinkBundle\Mediator\Orm\QueryMediator
+    public: true
+    arguments:
+
+  Evrinoma\LinkBundle\Mediator\Orm\QueryMediator:
+    alias: evrinoma.link.query.orm.mediator
+
+  evrinoma.link.command.mediator:
+    class: Evrinoma\LinkBundle\Mediator\CommandMediator
+    public: true
+    arguments:
+
+  Evrinoma\LinkBundle\Mediator\CommandMediator:
+    alias: evrinoma.link.command.mediator
+
+  Evrinoma\LinkBundle\Mediator\CommandMediatorInterface:
+    alias: evrinoma.link.command.mediator
+
+  evrinoma.link.pre.validator:
+    class: Evrinoma\LinkBundle\PreValidator\DtoPreValidator
+    public: true
+    arguments:
+
+  Evrinoma\LinkBundle\PreValidator\DtoPreValidator:
+    alias: evrinoma.link.pre.validator
+
+  Evrinoma\LinkBundle\PreValidator\DtoPreValidatorInterface:
+    alias: evrinoma.link.pre.validator

@@ -1,0 +1,3 @@
+link_api:
+  resource: "@EvrinomaLinkBundle/Controller/LinkApiController.php"
+  type: annotation

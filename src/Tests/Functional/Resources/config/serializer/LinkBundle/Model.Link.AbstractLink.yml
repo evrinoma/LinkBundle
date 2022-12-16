@@ -1,0 +1,24 @@
+Evrinoma\LinkBundle\Model\Link\AbstractLink:
+  exclusion_policy: ALL
+  properties:
+    id:
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true
+    createdAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+    updatedAt:
+      type: DateTimeImmutable<'Y-m-d H:i'>
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+    active:
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true
+    name:
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true
+    url:
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true
+    position:
+      groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true

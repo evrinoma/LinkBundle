@@ -1,0 +1,9 @@
+services:
+  evrinoma.link.test.functional.action.link:
+    class: Evrinoma\LinkBundle\Tests\Functional\Action\BaseLink
+    public: true
+    arguments:
+
+  Evrinoma\LinkBundle\Tests\Functional\Action\BaseLink:
+    alias: evrinoma.link.test.functional.action.link
+    public: true

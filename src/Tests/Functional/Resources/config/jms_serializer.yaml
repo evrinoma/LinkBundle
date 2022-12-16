@@ -1,0 +1,6 @@
+jms_serializer:
+  metadata:
+    directories:
+      LinkBundle:
+        namespace_prefix: "Evrinoma\\LinkBundle"
+        path: '%kernel.root_dir%/Resources/config/serializer/LinkBundle'

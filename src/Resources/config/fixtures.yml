@@ -1,0 +1,5 @@
+services:
+  evrinoma.link.fixtures.link:
+    class: Evrinoma\LinkBundle\Fixtures\LinkFixtures
+    tags:
+      - { name: doctrine.fixture.orm }
