@@ -2,7 +2,7 @@
 
 преопределение штатного класса сущности
 
-    contractor:
+    link:
         db_driver: orm модель данных
         factory: App\Link\Factory\LinkFactory фабрика для создания объектов,
                  недостающие значения можно разрешить только на уровне Mediator
@@ -116,5 +116,4 @@ vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php
 ## Done
 
 ## License
-
     PROPRIETARY
