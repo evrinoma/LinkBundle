@@ -74,6 +74,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *                 @OA\Property(property="id", type="string"),
      *                 @OA\Property(property="name", type="string"),
      *                 @OA\Property(property="url", type="string"),
+     *                 @OA\Property(property="position", type="int"),
      *             )
      *         )
      *     )
@@ -123,7 +124,8 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *                 @OA\Property(property="id", type="string"),
      *                 @OA\Property(property="name", type="string"),
      *                 @OA\Property(property="url", type="string"),
-     *                 @OA\Property(property="active", type="string")
+     *                 @OA\Property(property="active", type="string"),
+     *                 @OA\Property(property="position", type="int"),
      *             )
      *         )
      *     )
@@ -218,6 +220,14 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *         description="id Entity",
      *         in="query",
      *         name="id",
+     *         @OA\Schema(
+     *             type="string",
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         description="position",
+     *         in="query",
+     *         name="position",
      *         @OA\Schema(
      *             type="string",
      *         )
