@@ -25,7 +25,6 @@ class DtoPreValidator extends AbstractPreValidator implements DtoPreValidatorInt
         $this
             ->checkUrl($dto)
             ->checkName($dto)
-            ->checkActive($dto)
             ->checkPosition($dto);
     }
 
