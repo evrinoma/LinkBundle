@@ -19,7 +19,7 @@ use Evrinoma\LinkBundle\Exception\LinkCannotBeRemovedException;
 use Evrinoma\LinkBundle\Exception\LinkCannotBeSavedException;
 use Evrinoma\LinkBundle\Exception\LinkInvalidException;
 use Evrinoma\LinkBundle\Exception\LinkNotFoundException;
-use Evrinoma\LinkBundle\Factory\FactoryInterface;
+use Evrinoma\LinkBundle\Factory\Link\FactoryInterface;
 use Evrinoma\LinkBundle\Mediator\CommandMediatorInterface;
 use Evrinoma\LinkBundle\Model\Link\LinkInterface;
 use Evrinoma\LinkBundle\Repository\Link\LinkRepositoryInterface;
