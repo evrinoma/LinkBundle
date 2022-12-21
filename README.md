@@ -4,7 +4,7 @@
 
     link:
         db_driver: orm модель данных
-        factory: App\Link\Factory\LinkFactory фабрика для создания объектов,
+        factory: App\Link\Factory\Link\Factory фабрика для создания объектов,
                  недостающие значения можно разрешить только на уровне Mediator
         entity: App\Link\Entity\Link сущность
         constraints: Вкл/выкл проверки полей сущности по умолчанию 

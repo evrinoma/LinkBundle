@@ -17,7 +17,7 @@ use Evrinoma\LinkBundle\DependencyInjection\Compiler\Constraint\Property\LinkPas
 use Evrinoma\LinkBundle\Dto\LinkApiDto;
 use Evrinoma\LinkBundle\Entity\Link\BaseLink;
 use Evrinoma\LinkBundle\EvrinomaLinkBundle;
-use Evrinoma\LinkBundle\Factory\LinkFactory;
+use Evrinoma\LinkBundle\Factory\Link\Factory as LinkFactory;
 use Evrinoma\LinkBundle\Mediator\QueryMediatorInterface;
 use Evrinoma\LinkBundle\Repository\Link\LinkCommandRepositoryInterface;
 use Evrinoma\LinkBundle\Repository\Link\LinkQueryRepositoryInterface;

@@ -19,7 +19,7 @@ use Evrinoma\LinkBundle\Exception\LinkCannotBeRemovedException;
 use Evrinoma\LinkBundle\Exception\LinkCannotBeSavedException;
 use Evrinoma\LinkBundle\Exception\LinkInvalidException;
 use Evrinoma\LinkBundle\Exception\LinkNotFoundException;
-use Evrinoma\LinkBundle\Factory\LinkFactoryInterface;
+use Evrinoma\LinkBundle\Factory\FactoryInterface;
 use Evrinoma\LinkBundle\Mediator\CommandMediatorInterface;
 use Evrinoma\LinkBundle\Model\Link\LinkInterface;
 use Evrinoma\LinkBundle\Repository\Link\LinkRepositoryInterface;
@@ -29,16 +29,16 @@ final class CommandManager implements CommandManagerInterface
 {
     private LinkRepositoryInterface $repository;
     private ValidatorInterface            $validator;
-    private LinkFactoryInterface           $factory;
+    private FactoryInterface           $factory;
     private CommandMediatorInterface      $mediator;
 
     /**
      * @param ValidatorInterface       $validator
      * @param LinkRepositoryInterface  $repository
-     * @param LinkFactoryInterface     $factory
+     * @param FactoryInterface         $factory
      * @param CommandMediatorInterface $mediator
      */
-    public function __construct(ValidatorInterface $validator, LinkRepositoryInterface $repository, LinkFactoryInterface $factory, CommandMediatorInterface $mediator)
+    public function __construct(ValidatorInterface $validator, LinkRepositoryInterface $repository, FactoryInterface $factory, CommandMediatorInterface $mediator)
     {
         $this->validator = $validator;
         $this->repository = $repository;

@@ -24,7 +24,7 @@ services:
     alias: evrinoma.link.facade
 
   evrinoma.link.factory:
-    class: Evrinoma\LinkBundle\Factory\LinkFactory
+    class: Evrinoma\LinkBundle\Factory\Link\Factory
     public: true
     arguments:
 

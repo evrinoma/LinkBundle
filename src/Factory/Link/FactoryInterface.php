@@ -11,12 +11,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Evrinoma\LinkBundle\Factory;
+namespace Evrinoma\LinkBundle\Factory\Link;
 
 use Evrinoma\LinkBundle\Dto\LinkApiDtoInterface;
 use Evrinoma\LinkBundle\Model\Link\LinkInterface;
 
-interface LinkFactoryInterface
+interface FactoryInterface
 {
     /**
      * @param LinkApiDtoInterface $dto
