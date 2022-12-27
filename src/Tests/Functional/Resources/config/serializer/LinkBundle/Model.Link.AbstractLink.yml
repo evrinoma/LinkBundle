@@ -7,9 +7,11 @@ Evrinoma\LinkBundle\Model\Link\AbstractLink:
     createdAt:
       type: DateTimeImmutable<'Y-m-d H:i'>
       groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true
     updatedAt:
       type: DateTimeImmutable<'Y-m-d H:i'>
       groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
+      expose: true
     active:
       groups: [ API_GET_LINK, API_POST_LINK, API_PUT_LINK, ]
       expose: true
