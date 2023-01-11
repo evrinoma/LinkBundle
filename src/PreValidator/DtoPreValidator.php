@@ -56,7 +56,7 @@ class DtoPreValidator extends AbstractPreValidator implements DtoPreValidatorInt
     private function checkUrl(DtoInterface $dto): self
     {
         /** @var LinkApiDtoInterface $dto */
-        if (!$dto->hasId()) {
+        if (!$dto->hasUrl()) {
             throw new LinkInvalidException('The Dto has\'t url');
         }
 
