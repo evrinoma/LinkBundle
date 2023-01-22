@@ -88,14 +88,17 @@ class LinkFixtures extends AbstractFixture implements FixtureGroupInterface, Ord
         $short = self::getReferenceName();
         $i = 0;
 
-        foreach (static::$data as $record) {
-            $entity = new static::$class();
+        foreach ($this->getData() as $record) {
+            $entity = $this->getEntity();
             $entity
                 ->setName($record[LinkApiDtoInterface::NAME])
                 ->setUrl($record[LinkApiDtoInterface::URL])
                 ->setPosition($record[LinkApiDtoInterface::POSITION])
                 ->setCreatedAt(new \DateTimeImmutable($record['created_at']))
                 ->setActive($record[LinkApiDtoInterface::ACTIVE]);
+
+            $this->expandEntity($entity);
+
             $this->addReference($short.$i, $entity);
             $manager->persist($entity);
             ++$i;
