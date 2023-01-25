@@ -25,7 +25,7 @@
                  недостающие значения можно разрешить только на уровне Mediator
         entity: App\Link\Entity\Link сущность
         constraints: Вкл/выкл проверки полей сущности по умолчанию 
-        dto_class: App\Link\Dto\LinkDto класс dto с которым работает сущность
+        dto: App\Link\Dto\LinkDto класс dto с которым работает сущность
         decorates:
           command - декоратор mediator команд ссылок 
           query - декоратор mediator запросов ссылок
