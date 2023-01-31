@@ -61,26 +61,45 @@ class BaseLink extends AbstractServiceTest implements BaseLinkTestInterface
 
     public function actionCriteriaNotFound(): void
     {
-        $find = $this->criteria([LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(), LinkApiDtoInterface::ACTIVE => Active::wrong()]);
+        $find = $this->criteria([
+            LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(),
+            LinkApiDtoInterface::ACTIVE => Active::wrong(),
+        ]);
         $this->testResponseStatusNotFound();
         Assert::assertArrayHasKey(PayloadModel::PAYLOAD, $find);
 
-        $find = $this->criteria([LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(), LinkApiDtoInterface::ID => Id::value(), LinkApiDtoInterface::ACTIVE => Active::block(), LinkApiDtoInterface::NAME => Name::wrong()]);
+        $find = $this->criteria([
+            LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(),
+            LinkApiDtoInterface::ID => Id::value(),
+            LinkApiDtoInterface::ACTIVE => Active::block(),
+            LinkApiDtoInterface::NAME => Name::wrong(),
+        ]);
         $this->testResponseStatusNotFound();
         Assert::assertArrayHasKey(PayloadModel::PAYLOAD, $find);
     }
 
     public function actionCriteria(): void
     {
-        $find = $this->criteria([LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(), LinkApiDtoInterface::ACTIVE => Active::value(), LinkApiDtoInterface::ID => Id::value()]);
+        $find = $this->criteria([
+            LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(),
+            LinkApiDtoInterface::ACTIVE => Active::value(),
+            LinkApiDtoInterface::ID => Id::value(),
+        ]);
         $this->testResponseStatusOK();
         Assert::assertCount(1, $find[PayloadModel::PAYLOAD]);
 
-        $find = $this->criteria([LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(), LinkApiDtoInterface::ACTIVE => Active::delete()]);
+        $find = $this->criteria([
+            LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(),
+            LinkApiDtoInterface::ACTIVE => Active::delete(),
+        ]);
         $this->testResponseStatusOK();
         Assert::assertCount(3, $find[PayloadModel::PAYLOAD]);
 
-        $find = $this->criteria([LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(), LinkApiDtoInterface::ACTIVE => Active::delete(), LinkApiDtoInterface::NAME => Name::value()]);
+        $find = $this->criteria([
+            LinkApiDtoInterface::DTO_CLASS => static::getDtoClass(),
+            LinkApiDtoInterface::ACTIVE => Active::delete(),
+            LinkApiDtoInterface::NAME => Name::value(),
+        ]);
         $this->testResponseStatusOK();
         Assert::assertCount(2, $find[PayloadModel::PAYLOAD]);
     }
@@ -103,7 +122,12 @@ class BaseLink extends AbstractServiceTest implements BaseLinkTestInterface
     {
         $find = $this->assertGet(Id::value());
 
-        $updated = $this->put(static::getDefault([LinkApiDtoInterface::ID => Id::value(), LinkApiDtoInterface::NAME => Name::value(), LinkApiDtoInterface::URL => Url::value(), LinkApiDtoInterface::POSITION => Position::value()]));
+        $updated = $this->put(static::getDefault([
+            LinkApiDtoInterface::ID => Id::value(),
+            LinkApiDtoInterface::NAME => Name::value(),
+            LinkApiDtoInterface::URL => Url::value(),
+            LinkApiDtoInterface::POSITION => Position::value(),
+        ]));
         $this->testResponseStatusOK();
 
         Assert::assertEquals($find[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID], $updated[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID]);
@@ -133,7 +157,7 @@ class BaseLink extends AbstractServiceTest implements BaseLinkTestInterface
 
     public function actionDeleteUnprocessable(): void
     {
-        $response = $this->delete(Id::empty());
+        $response = $this->delete(Id::blank());
         Assert::assertArrayHasKey(PayloadModel::PAYLOAD, $response);
         $this->testResponseStatusUnprocessable();
     }
@@ -155,17 +179,26 @@ class BaseLink extends AbstractServiceTest implements BaseLinkTestInterface
         $this->testResponseStatusCreated();
         $this->checkResult($created);
 
-        $query = static::getDefault([LinkApiDtoInterface::ID => $created[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID], LinkApiDtoInterface::NAME => Name::empty()]);
+        $query = static::getDefault([
+            LinkApiDtoInterface::ID => $created[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID],
+            LinkApiDtoInterface::NAME => Name::blank(),
+        ]);
 
         $this->put($query);
         $this->testResponseStatusUnprocessable();
 
-        $query = static::getDefault([LinkApiDtoInterface::ID => $created[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID], LinkApiDtoInterface::URL => URL::empty()]);
+        $query = static::getDefault([
+            LinkApiDtoInterface::ID => $created[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID],
+            LinkApiDtoInterface::URL => URL::blank(),
+        ]);
 
         $this->put($query);
         $this->testResponseStatusUnprocessable();
 
-        $query = static::getDefault([LinkApiDtoInterface::ID => $created[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID], LinkApiDtoInterface::POSITION => Position::empty()]);
+        $query = static::getDefault([
+            LinkApiDtoInterface::ID => $created[PayloadModel::PAYLOAD][0][LinkApiDtoInterface::ID],
+            LinkApiDtoInterface::POSITION => Position::blank(),
+        ]);
 
         $this->put($query);
         $this->testResponseStatusUnprocessable();
