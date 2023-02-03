@@ -18,6 +18,7 @@ use Evrinoma\LinkBundle\Model\Link\AbstractLink;
 
 /**
  * @ORM\Table(name="e_link")
+ *
  * @ORM\Entity
  */
 class BaseLink extends AbstractLink

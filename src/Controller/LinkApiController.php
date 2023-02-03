@@ -56,12 +56,16 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
 
     /**
      * @Rest\Post("/api/link/create", options={"expose": true}, name="api_link_create")
+     *
      * @OA\Post(
      *     tags={"link"},
      *     description="the method perform create link",
+     *
      *     @OA\RequestBody(
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
      *                 example={
      *                     "class": "Evrinoma\LinkBundle\Dto\LinkApiDto",
@@ -71,6 +75,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *                     "position": "1",
      *                 },
      *                 type="object",
+     *
      *                 @OA\Property(property="class", type="string", default="Evrinoma\LinkBundle\Dto\LinkApiDto"),
      *                 @OA\Property(property="id", type="string"),
      *                 @OA\Property(property="name", type="string"),
@@ -80,6 +85,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *         )
      *     )
      * )
+     *
      * @OA\Response(response=200, description="Create link")
      *
      * @return JsonResponse
@@ -106,12 +112,16 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
 
     /**
      * @Rest\Put("/api/link/save", options={"expose": true}, name="api_link_save")
+     *
      * @OA\Put(
      *     tags={"link"},
      *     description="the method perform save link for current entity",
+     *
      *     @OA\RequestBody(
+     *
      *         @OA\MediaType(
      *             mediaType="application/json",
+     *
      *             @OA\Schema(
      *                 example={
      *                     "class": "Evrinoma\LinkBundle\Dto\LinkApiDto",
@@ -122,6 +132,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *                     "position": "1",
      *                 },
      *                 type="object",
+     *
      *                 @OA\Property(property="class", type="string", default="Evrinoma\LinkBundle\Dto\LinkApiDto"),
      *                 @OA\Property(property="id", type="string"),
      *                 @OA\Property(property="name", type="string"),
@@ -132,6 +143,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
      *         )
      *     )
      * )
+     *
      * @OA\Response(response=200, description="Save link")
      *
      * @return JsonResponse
@@ -156,30 +168,36 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
 
     /**
      * @Rest\Delete("/api/link/delete", options={"expose": true}, name="api_link_delete")
+     *
      * @OA\Delete(
      *     tags={"link"},
+     *
      *     @OA\Parameter(
      *         description="class",
      *         in="query",
      *         name="class",
      *         required=true,
+     *
      *         @OA\Schema(
      *             type="string",
      *             default="Evrinoma\LinkBundle\Dto\LinkApiDto",
      *             readOnly=true
      *         )
      *     ),
+     *
      *     @OA\Parameter(
      *         description="id Entity",
      *         in="query",
      *         name="id",
      *         required=true,
+     *
      *         @OA\Schema(
      *             type="string",
      *             default="3",
      *         )
      *     )
      * )
+     *
      * @OA\Response(response=200, description="Delete link")
      *
      * @return JsonResponse
@@ -205,52 +223,64 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
 
     /**
      * @Rest\Get("/api/link/criteria", options={"expose": true}, name="api_link_criteria")
+     *
      * @OA\Get(
      *     tags={"link"},
+     *
      *     @OA\Parameter(
      *         description="class",
      *         in="query",
      *         name="class",
      *         required=true,
+     *
      *         @OA\Schema(
      *             type="string",
      *             default="Evrinoma\LinkBundle\Dto\LinkApiDto",
      *             readOnly=true
      *         )
      *     ),
+     *
      *     @OA\Parameter(
      *         description="id Entity",
      *         in="query",
      *         name="id",
+     *
      *         @OA\Schema(
      *             type="string",
      *         )
      *     ),
+     *
      *     @OA\Parameter(
      *         description="position",
      *         in="query",
      *         name="position",
+     *
      *         @OA\Schema(
      *             type="string",
      *         )
      *     ),
+     *
      *     @OA\Parameter(
      *         description="name",
      *         in="query",
      *         name="name",
+     *
      *         @OA\Schema(
      *             type="string",
      *         )
      *     ),
+     *
      *     @OA\Parameter(
      *         description="url",
      *         in="query",
      *         name="url",
+     *
      *         @OA\Schema(
      *             type="string",
      *         )
      *     )
      * )
+     *
      * @OA\Response(response=200, description="Return link")
      *
      * @return JsonResponse
@@ -275,30 +305,36 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
 
     /**
      * @Rest\Get("/api/link", options={"expose": true}, name="api_link")
+     *
      * @OA\Get(
      *     tags={"link"},
+     *
      *     @OA\Parameter(
      *         description="class",
      *         in="query",
      *         name="class",
      *         required=true,
+     *
      *         @OA\Schema(
      *             type="string",
      *             default="Evrinoma\LinkBundle\Dto\LinkApiDto",
      *             readOnly=true
      *         )
      *     ),
+     *
      *     @OA\Parameter(
      *         description="id Entity",
      *         in="query",
      *         name="id",
      *         required=true,
+     *
      *         @OA\Schema(
      *             type="string",
      *             default="3",
      *         )
      *     )
      * )
+     *
      * @OA\Response(response=200, description="Return link")
      *
      * @return JsonResponse

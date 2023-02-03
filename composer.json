@@ -54,16 +54,12 @@
     },
     "scripts": {
         "auto-scripts": {
-            "hooks":"vendor/bin/hooks"
+            "hooks": "vendor/bin/hooks evrinoma:hooks:create"
         },
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "pre-package-uninstall": [
-        ]
+        "pre-package-uninstall": ["vendor/bin/hooks evrinoma:hooks:delete", "true"]
     },
     "repositories": {
         "dto": {
