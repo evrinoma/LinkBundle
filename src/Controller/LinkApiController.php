@@ -104,6 +104,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
         try {
             $this->facade->post($linkApiDto, $group, $json);
         } catch (\Exception $e) {
+            $json = [];
             $error = $this->setRestStatus($e);
         }
 
@@ -160,6 +161,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
         try {
             $this->facade->put($linkApiDto, $group, $json);
         } catch (\Exception $e) {
+            $json = [];
             $error = $this->setRestStatus($e);
         }
 
@@ -215,6 +217,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
         try {
             $this->facade->delete($linkApiDto, '', $json);
         } catch (\Exception $e) {
+            $json = [];
             $error = $this->setRestStatus($e);
         }
 
@@ -297,6 +300,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
         try {
             $this->facade->criteria($linkApiDto, $group, $json);
         } catch (\Exception $e) {
+            $json = [];
             $error = $this->setRestStatus($e);
         }
 
@@ -351,6 +355,7 @@ final class LinkApiController extends AbstractWrappedApiController implements Ap
         try {
             $this->facade->get($linkApiDto, $group, $json);
         } catch (\Exception $e) {
+            $json = [];
             $error = $this->setRestStatus($e);
         }
 
